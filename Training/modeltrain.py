@@ -238,7 +238,7 @@ for train_index, val_index in kf.split(df):
 
 
 # === Modeli Kaydet ve Drive'a Kopyala
-MODEL_PATH = "arcface_ranknet_final.pth"
+MODEL_PATH = "../Models/arcface_ranknet_final.pth"
 torch.save(model.state_dict(), MODEL_PATH)
 print("✅ Model kaydedildi:", MODEL_PATH)
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Scoring</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Face Scoring Demo</h1>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <button type="submit">Yüzü Değerlendir</button>
+        </form>
+
+        {% if error %}
+            <p style="color:red;">{{ error }}</p>
+        {% endif %}
+
+        {% if score %}
+            <h2>Puan: {{ score }} / 10</h2>
+        {% endif %}
+
+        {% if image_file %}
+            <img src="{{ url_for('static', filename=image_file) }}" alt="Detected Face" style="max-width:100%; margin-top:20px;">
+        {% endif %}
+    </div>
+</body>
+</html>
